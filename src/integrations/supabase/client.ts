@@ -39,9 +39,15 @@ function createSupabaseClient() {
       ...(!SUPABASE_URL ? ['SUPABASE_URL'] : []),
       ...(!SUPABASE_PUBLISHABLE_KEY ? ['SUPABASE_PUBLISHABLE_KEY'] : []),
     ];
-    const message = `Missing Supabase environment variable(s): ${missing.join(', ')}. Connect Supabase in Lovable Cloud.`;
+    const message = `Missing Supabase environment variable(s): ${missing.join(', ')}. Add VITE_SUPABASE_URL and VITE_SUPABASE_PUBLISHABLE_KEY to your Vercel environment variables.`;
     console.error(`[Supabase] ${message}`);
-    throw new Error(message);
+    // Return a placeholder client so the public site renders without crashing.
+    // Database features (admin, settings, etc.) will silently fail until
+    // the env vars are configured in Vercel → Settings → Environment Variables.
+    return createClient<Database>(
+      'https://placeholder.supabase.co',
+      'placeholder-key',
+    );
   }
 
   return createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {

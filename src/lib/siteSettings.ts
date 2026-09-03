@@ -53,20 +53,26 @@ export const SETTINGS_QUERY_KEY = ["site_settings", "general"] as const;
 
 /** Fetch settings from Supabase. Returns merged defaults + saved values. */
 async function fetchSettings(): Promise<SiteSettings> {
-  const { data, error } = await supabase
-    .from("site_settings")
-    .select("value")
-    .eq("key", "general")
-    .maybeSingle();
+  try {
+    const { data, error } = await supabase
+      .from("site_settings")
+      .select("value")
+      .eq("key", "general")
+      .maybeSingle();
 
-  if (error) {
-    // If the table doesn't exist yet, return defaults gracefully.
-    console.warn("[siteSettings] fetch error:", error.message);
+    if (error) {
+      // If the table doesn't exist yet, return defaults gracefully.
+      console.warn("[siteSettings] fetch error:", error.message);
+      return SETTINGS_DEFAULTS;
+    }
+
+    const saved = (data?.value ?? {}) as Partial<SiteSettings>;
+    return { ...SETTINGS_DEFAULTS, ...saved };
+  } catch (err) {
+    // Supabase not configured yet (e.g. missing env vars on Vercel) — use defaults.
+    console.warn("[siteSettings] Supabase unavailable, using defaults:", err);
     return SETTINGS_DEFAULTS;
   }
-
-  const saved = (data?.value ?? {}) as Partial<SiteSettings>;
-  return { ...SETTINGS_DEFAULTS, ...saved };
 }
 
 /**
