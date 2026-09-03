@@ -13,6 +13,7 @@ import { GlobalPartnershipSection } from "@/components/site/GlobalPartnership";
 import { ARTICLES } from "@/data/articles";
 import heroLab from "@/assets/hero-lab.jpg";
 import exosomeImg from "@/assets/exosome.jpg";
+import exosome1 from "@/assets/exosome1.png";
 import cleanroom from "@/assets/cleanroom.jpg";
 import qcLab from "@/assets/qc-lab.jpg";
 import molecular from "@/assets/molecular.jpg";
@@ -328,97 +329,14 @@ function Home() {
         </Reveal>
       </Section>
 
-      {/* ================================================================
-          05. EXOSOME FEATURE SECTION
-          PDF section 05 — "From Cellular Source to Characterized Product"
-          Left: description. Right: 7-step process flow.
-          ================================================================ */}
-      <section className="relative isolate overflow-hidden bg-navy">
-        <img
-          src={exosomeImg}
-          alt={t("exosome.imageAlt")}
-          loading="lazy"
-          className="absolute inset-0 h-full w-full object-cover opacity-20"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/95 via-navy/85 to-navy-deep/95" />
-        <div className="relative mx-auto w-full max-w-[1240px] px-6 py-20 md:px-10 md:py-28">
+     <section className="relative overflow-hidden">
+  <img
+    src={exosome1}
+    alt={t("exosome.imageAlt")}
+    className="mx-auto w-full max-w-7xl object-cover"
+  />
+</section>
 
-          <div className="grid gap-14 lg:grid-cols-[1fr_1.1fr] lg:items-start">
-            {/* Left side */}
-            <Reveal>
-              <div>
-                <p className="eyebrow !text-teal">Exosome Technology</p>
-                {/* PDF: "From Cellular Source to Characterized Product" */}
-                <h2 className="mt-5 text-[clamp(1.75rem,3.4vw,2.85rem)] leading-[1.12] font-semibold text-white">
-                  From Cellular Source to Characterized Product
-                </h2>
-                <p className="mt-6 text-[1rem] leading-relaxed text-white/70">
-                  {t("exosome.body1")}
-                </p>
-                <p className="mt-4 text-[1rem] leading-relaxed text-white/70">
-                  {t("exosome.body2")}
-                </p>
-
-                {/* PDF: 3 feature badges */}
-                <div className="mt-10 grid gap-px bg-white/10 sm:grid-cols-3">
-                  {[
-                    { label: "High Purity", desc: "Advanced isolation & purification technology" },
-                    { label: "Consistent Quality", desc: "Rigorous testing and quality control" },
-                    { label: "Proven Technology", desc: "Science-driven process and characterization" },
-                  ].map((feat) => (
-                    <div key={feat.label} className="bg-white/[0.04] px-5 py-5 text-center">
-                      <p className="text-[0.8rem] font-semibold text-white">{feat.label}</p>
-                      <p className="mt-1.5 text-[0.72rem] leading-relaxed text-white/55">{feat.desc}</p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-10">
-                  <TealButton to="/technology/$slug" params={{ slug: "exosome" }}>
-                    {t("exosome.cta")}
-                  </TealButton>
-                </div>
-              </div>
-            </Reveal>
-
-            {/* Right side — PDF: 7-step numbered process */}
-            <Reveal delay={140}>
-              <div>
-                <p className="eyebrow !text-teal">Production Process</p>
-                <ol className="mt-6 space-y-px">
-                  {[
-                    { step: "1. Cell Source", desc: "Carefully selected and screened cell sources" },
-                    { step: "2. Culture", desc: "Optimized cell culture conditions for exosome production" },
-                    { step: "3. Isolation", desc: "Initial separation of exosomes from cell culture" },
-                    { step: "4. Purification", desc: "Advanced purification to achieve high purity exosomes" },
-                    { step: "5. Characterization", desc: "Comprehensive analysis of size, concentration and markers" },
-                    { step: "6. Formulation", desc: "Stabilized formulation for optimal performance" },
-                    { step: "7. Quality Control", desc: "Rigorous quality control at every batch" },
-                  ].map((item, i) => (
-                    <li
-                      key={item.step}
-                      className="flex items-start gap-4 bg-white/[0.04] px-5 py-4 outline outline-white/10"
-                    >
-                      <div className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-teal text-[0.62rem] font-bold text-[#05231f]">
-                        {String(i + 1).padStart(2, "0")}
-                      </div>
-                      <div>
-                        <p className="text-[0.88rem] font-semibold text-white">{item.step}</p>
-                        <p className="mt-0.5 text-[0.78rem] leading-relaxed text-white/55">{item.desc}</p>
-                      </div>
-                    </li>
-                  ))}
-                </ol>
-                <div className="mt-6 border border-teal/30 bg-teal/10 px-5 py-3 text-center">
-                  <p className="text-[0.75rem] font-semibold tracking-[0.1em] text-teal">
-                    Science · Technology · Quality · Every Step · Every Batch
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
 
       {/* ================================================================
           06. MANUFACTURING — "From R&D to Scalable Manufacturing"

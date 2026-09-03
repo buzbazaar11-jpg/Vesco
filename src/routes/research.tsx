@@ -11,9 +11,11 @@ import { useI18n } from "@/lib/i18n";
 import researchTeamImg from "@/assets/research-team.jpg";
 import koreanLabTeam from "@/assets/korean-lab-team.jpg";
 import cleanroom from "@/assets/cleanroom.jpg";
-import qcLab from "@/assets/qc-lab.jpg";
-import molecular from "@/assets/molecular.jpg";
-import lyophilizer from "@/assets/lyophilizer.jpg";
+import qcLab from "@/assets/RD/ac.png";
+import qd from "@/assets/RD/qd.png";
+import molecular from "@/assets/RD/exo.png";
+import molecul from "@/assets/RD/fs.png";
+import lyophilizer from "@/assets/RD/pd.png";
 import koreanScientist from "@/assets/korean-scientist-vials.jpg";
 import vials from "@/assets/vials.jpg";
 
@@ -550,7 +552,7 @@ function Page() {
                 Currently using: molecular.jpg as placeholder.
                 ========================================================= */}
             <img
-              src={molecular}
+              src={molecul}
               alt="Electron microscopy image of exosome vesicles at 200nm scale"
               loading="lazy"
               className="aspect-[4/3] w-full object-cover"
@@ -789,7 +791,7 @@ function Page() {
                 Currently using: qc-lab.jpg as placeholder.
                 ========================================================= */}
             <img
-              src={qcLab}
+              src={qd}
               alt="Quality by Design framework"
               loading="lazy"
               className="aspect-[4/3] w-full object-cover"

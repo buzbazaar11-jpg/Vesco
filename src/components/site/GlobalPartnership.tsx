@@ -1,4 +1,6 @@
 import { Reveal } from "@/components/site/primitives";
+import everceutical from "@/assets/everceutical.png";
+
 
 // ─── SVG icons for each product platform ─────────────────────────────────────
 function ExosomeIcon() {
@@ -150,171 +152,35 @@ export function GlobalPartnershipSection() {
       <div className="relative mx-auto w-full max-w-[1240px] px-6 md:px-10">
 
         {/* ── Top: eyebrow + main heading ─────────────────────────────── */}
-        <Reveal>
-          <div className="text-center">
-            <p className="text-[0.72rem] font-bold uppercase tracking-[0.22em] text-teal">
-              Global Partnership
-            </p>
-            {/* Teal underline */}
-            <div className="mx-auto mt-2 h-[2px] w-12 bg-teal" />
+   
+<Reveal>
+  <div className="text-center">
+    <h2 className="text-[clamp(2rem,5vw,3.4rem)] font-bold leading-tight text-navy">
+      Vesco Science × EverCeutical
+    </h2>
 
-            {/* PDF: "Vesco Science × EverCeutical" — large heading */}
-            <h2 className="mt-6 text-[clamp(2rem,5vw,3.4rem)] font-bold leading-tight text-navy">
-              Vesco Science{" "}
-              <span className="text-navy">×</span>{" "}
-              <span className="text-navy">EverCeutical</span>
-            </h2>
+    <p className="mx-auto mt-5 max-w-2xl text-[0.95rem] leading-relaxed text-navy/65">
+      EverCeutical has been granted worldwide marketing rights for selected
+      Vesco Science products, including exosomes, fillers and peptide-based solutions.
+    </p>
 
-            {/* PDF: "STRATEGIC GLOBAL PARTNERSHIP" subtitle */}
-            <p className="mt-3 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-navy/50">
-              Strategic Global Partnership
-            </p>
+   <a
+  href="https://www.everceutical.com/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="mx-auto mt-10 block w-full max-w-5xl"
+>
+  <img
+    src={everceutical}
+    alt="Vesco Science × EverCeutical"
+    className="w-full object-contain"
+  />
+</a>
 
-            {/* PDF body copy */}
-            <p className="mx-auto mt-6 max-w-2xl text-[0.95rem] leading-relaxed text-navy/65">
-              EverCeutical has been granted worldwide marketing rights for selected
-              Vesco Science products, including exosomes, fillers and peptide-based solutions.
-            </p>
-          </div>
-        </Reveal>
+  </div>
+</Reveal>
 
-        {/* Korea badge — top-right */}
-        <div className="pointer-events-none absolute top-0 right-6 hidden lg:block md:right-10">
-          <Reveal delay={200}>
-            <div className="flex flex-col items-center gap-1">
-              <div className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-white bg-white shadow-md text-2xl">
-                🇰🇷
-              </div>
-              <p className="text-center text-[0.6rem] font-bold uppercase tracking-[0.12em] text-navy/60">
-                Korea
-              </p>
-              <p className="text-center text-[0.55rem] font-semibold uppercase tracking-[0.1em] text-teal">
-                Origin of Innovation
-              </p>
-            </div>
-          </Reveal>
-        </div>
-
-        {/* ── Middle: Two-logo panel ───────────────────────────────────── */}
-        <Reveal delay={100}>
-          <div className="mt-12 grid gap-px overflow-hidden rounded-sm border border-[#CBD9EC] bg-[#CBD9EC] sm:grid-cols-[1fr_auto_1fr]">
-
-            {/* Vesco Science side */}
-            <div className="flex flex-col justify-center gap-4 bg-white px-8 py-8">
-              <div className="flex items-center gap-3">
-                {/* Vesco molecule icon mark */}
-                <svg viewBox="0 0 36 36" className="h-9 w-9 flex-shrink-0" fill="none" aria-hidden="true">
-                  <circle cx="18" cy="6" r="4" fill="#1A3C6E" />
-                  <circle cx="6" cy="26" r="4" fill="#1A3C6E" />
-                  <circle cx="30" cy="26" r="4" fill="#1A3C6E" />
-                  <line x1="18" y1="10" x2="6" y2="22" stroke="#1A3C6E" strokeWidth="2" />
-                  <line x1="18" y1="10" x2="30" y2="22" stroke="#1A3C6E" strokeWidth="2" />
-                  <line x1="6" y1="26" x2="30" y2="26" stroke="#1A3C6E" strokeWidth="2" />
-                </svg>
-                <div>
-                  <p className="text-[1.15rem] font-extrabold uppercase tracking-[0.14em] text-navy">
-                    Vesco Science
-                  </p>
-                  <div className="mt-0.5 h-[2px] w-10 bg-teal" />
-                </div>
-              </div>
-              <p className="text-[0.82rem] text-navy/55">
-                R&amp;D &nbsp;•&nbsp; Technology &nbsp;•&nbsp; Manufacturing
-              </p>
-            </div>
-
-            {/* × divider */}
-            <div className="flex items-center justify-center bg-white px-6 py-6">
-              <span className="text-[2rem] font-bold text-navy/30">×</span>
-            </div>
-
-            {/* EverCeutical side */}
-            <div className="flex flex-col justify-center gap-4 bg-white px-8 py-8">
-              <div className="flex items-center gap-3">
-                {/* EverCeutical stylised icon */}
-                <svg viewBox="0 0 36 36" className="h-9 w-9 flex-shrink-0" fill="none" aria-hidden="true">
-                  <circle cx="18" cy="18" r="16" stroke="#4A90C4" strokeWidth="2" />
-                  <circle cx="18" cy="18" r="9" stroke="#4A90C4" strokeWidth="1.5" opacity="0.5" />
-                  <path d="M12 18 C12 14 15 11 18 11 C21 11 24 14 24 18 C24 22 21 25 18 25 C15 25 12 22 12 18Z" stroke="#4A90C4" strokeWidth="1.5" fill="#4A90C4" fillOpacity="0.1" />
-                </svg>
-                <div>
-                  <p className="text-[1.15rem] font-extrabold tracking-tight">
-                    <span className="text-navy">Ever</span>
-                    <span className="text-teal">Ceutical</span>
-                  </p>
-                  <p className="text-[0.55rem] font-semibold uppercase tracking-[0.18em] text-navy/40">
-                    True to Science
-                  </p>
-                  <div className="mt-0.5 h-[2px] w-10 bg-teal" />
-                </div>
-              </div>
-              <p className="text-[0.82rem] text-navy/55">
-                Global Marketing &nbsp;•&nbsp; Commercialization &nbsp;•&nbsp; Market Expansion
-              </p>
-            </div>
-          </div>
-        </Reveal>
-
-        {/* ── Product Platforms panel ──────────────────────────────────── */}
-        <Reveal delay={160}>
-          <div className="mt-6 rounded-sm border border-[#CBD9EC] bg-white p-6 md:p-8">
-            {/* Section header */}
-            <div className="mb-6 flex items-center gap-4">
-              <div className="h-px flex-1 bg-[#CBD9EC]" />
-              <p className="text-[0.68rem] font-bold uppercase tracking-[0.24em] text-teal">
-                Selected Product Platforms
-              </p>
-              <div className="h-px flex-1 bg-[#CBD9EC]" />
-            </div>
-
-            {/* 6-icon grid */}
-            <div className="grid grid-cols-3 gap-4 sm:grid-cols-6">
-              {platforms.map((p) => (
-                <div
-                  key={p.label}
-                  className="flex flex-col items-center gap-2 text-center"
-                >
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#EBF4FF]">
-                    {p.icon}
-                  </div>
-                  <p className="text-[0.65rem] font-bold uppercase tracking-[0.1em] text-navy">
-                    {p.label}
-                  </p>
-                  {/* Teal underline accent */}
-                  <div className="h-[2px] w-5 bg-teal/60" />
-                </div>
-              ))}
-            </div>
-          </div>
-        </Reveal>
-
-        {/* ── EverCeutical link ────────────────────────────────────────── */}
-        <Reveal delay={220}>
-          <div className="mt-6 flex justify-center">
-            <a
-              href="https://everceutical.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 rounded-sm border border-[#CBD9EC] bg-white px-6 py-4 text-[0.85rem] text-navy transition-colors hover:border-teal hover:text-teal"
-            >
-              {/* Globe icon */}
-              <svg viewBox="0 0 24 24" className="h-5 w-5 text-teal" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z" />
-              </svg>
-              <span>
-                <span className="font-semibold">Learn more about EverCeutical</span>
-                <br />
-                <span className="text-[0.75rem] text-navy/50">everceutical.com</span>
-              </span>
-              {/* External link icon */}
-              <svg viewBox="0 0 24 24" className="ml-1 h-4 w-4 text-navy/40" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3" />
-              </svg>
-            </a>
-          </div>
-        </Reveal>
-
+              
       </div>
     </section>
   );
