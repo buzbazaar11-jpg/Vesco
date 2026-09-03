@@ -1,0 +1,1 @@
+var e=`/assets/research-team-BMV1NwAO.jpg`;export{e as t};

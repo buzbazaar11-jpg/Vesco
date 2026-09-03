@@ -1,0 +1,1 @@
+var e=`/assets/cleanroom-DZtXjF0-.jpg`;export{e as t};

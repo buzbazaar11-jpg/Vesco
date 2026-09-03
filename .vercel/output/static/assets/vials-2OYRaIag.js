@@ -1,0 +1,1 @@
+var e=`/assets/vials-Ck5soEMR.jpg`;export{e as t};

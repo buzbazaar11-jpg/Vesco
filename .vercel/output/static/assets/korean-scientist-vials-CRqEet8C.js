@@ -1,0 +1,1 @@
+var e=`/assets/korean-scientist-vials-DxqjMGcR.jpg`;export{e as t};

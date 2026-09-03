@@ -1,0 +1,1 @@
+var e=`/assets/lyophilizer-DgNX1AUL.jpg`;export{e as t};

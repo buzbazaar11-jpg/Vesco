@@ -1,0 +1,1 @@
+var e=`/assets/headquarters-CII9tuSE.jpg`;export{e as t};
