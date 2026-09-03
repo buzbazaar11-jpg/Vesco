@@ -1,1 +1,0 @@
-var e=`/assets/qc-lab-mOryit6A.jpg`;export{e as t};

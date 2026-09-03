@@ -16,6 +16,10 @@ dist-ssr
 .nitro
 *.local
 
+# Vercel build output — never commit, Vercel builds this itself
+.vercel/output
+tsc-out.txt
+
 # Wrangler / Cloudflare
 .wrangler/
 .dev.vars

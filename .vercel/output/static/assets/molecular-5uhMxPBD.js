@@ -1,1 +1,0 @@
-var e=`/assets/molecular-CIuWq-Al.jpg`;export{e as t};

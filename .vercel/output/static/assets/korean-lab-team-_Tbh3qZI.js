@@ -1,1 +1,0 @@
-var e=`/assets/korean-lab-team-DDgkd_gw.jpg`;export{e as t};
