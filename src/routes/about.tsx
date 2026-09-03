@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero, Section, SectionHeading, Reveal, TealButton } from "@/components/site/primitives";
+import { GlobalPartnershipSection } from "@/components/site/GlobalPartnership";
 import { useI18n } from "@/lib/i18n";
 import cleanroom from "@/assets/cleanroom.jpg";
 import koreanLabTeam from "@/assets/korean-lab-team.jpg";
@@ -582,80 +583,9 @@ function Page() {
 
       {/* ================================================================
           GLOBAL PARTNERSHIP — Vesco Science × EverCeutical
-          PDF: page 6
+          PDF: exact layout — world map, logos, product platform icons, everceutical.com link
           ================================================================ */}
-      <Section tone="white">
-        <div className="grid gap-14 lg:grid-cols-[1.2fr_1fr] lg:items-center">
-          {/* Left: text + product platforms + CTA */}
-          <Reveal>
-            <div>
-              <p className="eyebrow">Global Partnership</p>
-              {/* PDF: "Vesco Science × EverCeutical" */}
-              <h2 className="mt-5 text-[clamp(1.75rem,3.4vw,2.85rem)] leading-[1.12] font-semibold text-navy">
-                Vesco Science <span className="text-science">×</span> EverCeutical
-              </h2>
-              <p className="mt-3 text-[0.85rem] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
-                Strategic Global Partnership
-              </p>
-              <p className="mt-6 text-[1rem] leading-relaxed text-muted-foreground">
-                Vesco Science collaborates with EverCeutical for the global marketing and
-                commercialization of selected Vesco Science products, including exosome, filler and
-                peptide-based solutions.
-              </p>
-
-              {/* PDF: Selected Product Platforms */}
-              <div className="mt-8 border border-hairline bg-background p-6">
-                <p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-science mb-4">
-                  Selected Product Platforms
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {["Exosomes", "HA & Fillers", "Peptides", "PDRN / PN", "Regenerative Solutions"].map(
-                    (item) => (
-                      <span
-                        key={item}
-                        className="border border-hairline bg-card px-3 py-1.5 text-[0.78rem] font-medium text-navy"
-                      >
-                        {item}
-                      </span>
-                    ),
-                  )}
-                </div>
-              </div>
-
-              <div className="mt-8">
-                <TealButton to="/about/network" variant="outline">
-                  Explore EverCeutical Partnership
-                </TealButton>
-              </div>
-            </div>
-          </Reveal>
-
-          {/* Right: Vesco × EverCeutical columns */}
-          <Reveal delay={120}>
-            <div className="space-y-0 border border-hairline overflow-hidden">
-              <div className="bg-background p-8">
-                <p className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-teal">
-                  Vesco Science
-                </p>
-                <p className="mt-2 text-[0.88rem] text-muted-foreground">
-                  R&D · Technology · Manufacturing
-                </p>
-              </div>
-              <div className="flex items-center justify-center border-y border-hairline bg-teal/5 py-4">
-                <span className="text-[1.5rem] font-bold text-teal/40">×</span>
-              </div>
-              <div className="bg-background p-8">
-                <p className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-teal">
-                  EverCeutical
-                </p>
-                <p className="mt-2 text-[0.88rem] text-muted-foreground">
-                  Global Marketing · Commercialization · Market Expansion
-                </p>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </Section>
+      <GlobalPartnershipSection />
 
       {/* ================================================================
           VISION & MISSION — PDF: pages 7

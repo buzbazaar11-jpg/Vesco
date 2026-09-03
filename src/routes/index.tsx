@@ -9,6 +9,7 @@ import {
   TealButton,
 } from "@/components/site/primitives";
 import { CTABand } from "@/components/site/CTABand";
+import { GlobalPartnershipSection } from "@/components/site/GlobalPartnership";
 import { ARTICLES } from "@/data/articles";
 import heroLab from "@/assets/hero-lab.jpg";
 import exosomeImg from "@/assets/exosome.jpg";
@@ -79,20 +80,13 @@ function Home() {
           className="absolute inset-0 h-full w-full object-cover opacity-45"
           style={{ animation: "vs-slow-zoom 26s ease-in-out infinite alternate" }}
         />
-
-        {/* Background video — uncomment and add src when video is available
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 h-full w-full object-cover opacity-50"
-          poster={heroLab}
-        >
-          SOURCE: Upload hero video to public/videos/hero-background.mp4
-          then add: <source src="/videos/hero-background.mp4" type="video/mp4" />
-          Fallback: browser will show poster image if video fails to load
-        </video>
+        {/*
+            HERO VIDEO — uncomment and set src when you have a licensed video:
+            <video autoPlay muted loop playsInline
+              className="absolute inset-0 h-full w-full object-cover opacity-50"
+              poster={heroLab}>
+              <source src="/videos/hero-background.mp4" type="video/mp4" />
+            </video>
         */}
 
         {/* Gradient overlay for text readability */}
@@ -697,100 +691,9 @@ function Home() {
 
       {/* ================================================================
           08. GLOBAL PARTNERSHIP — Vesco Science × EverCeutical
-          PDF: section showing strategic partnership panel
+          PDF: exact layout with world map, logos, platform icons, EverCeutical link
           ================================================================ */}
-      <section className="relative isolate overflow-hidden bg-navy-deep">
-        <div className="absolute inset-0 navy-grid opacity-40" />
-        <div
-          className="absolute -top-32 right-0 h-96 w-96 rounded-full blur-3xl opacity-20"
-          style={{ background: "radial-gradient(circle,rgba(53,184,176,0.5),transparent 70%)" }}
-        />
-        <div className="relative mx-auto w-full max-w-[1240px] px-6 py-20 md:px-10 md:py-28">
-          <Reveal>
-            <p className="eyebrow !text-teal">Global Partnership</p>
-            {/* PDF: "Vesco Science × EverCeutical" */}
-            <h2 className="mt-5 text-[clamp(1.75rem,3.4vw,2.85rem)] leading-[1.12] font-semibold text-white">
-              Vesco Science <span className="text-teal">×</span> EverCeutical
-            </h2>
-            <p className="mt-2 text-[0.82rem] font-semibold uppercase tracking-[0.16em] text-white/40">
-              Strategic Global Partnership
-            </p>
-            <p className="mt-6 max-w-2xl text-[1rem] leading-relaxed text-white/70">
-              Vesco Science collaborates with EverCeutical for the global marketing and commercialization of selected Vesco Science products, including exosome, filler and peptide-based solutions.
-            </p>
-          </Reveal>
-
-          <Reveal delay={120}>
-            <div className="mt-12 grid gap-px bg-white/10 sm:grid-cols-3">
-              {/* Vesco Science column */}
-              <div className="bg-white/[0.04] p-8">
-                <p className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-teal">
-                  Vesco Science
-                </p>
-                <p className="mt-2 text-[0.85rem] text-white/55">R&D · Technology · Manufacturing</p>
-                <ul className="mt-6 space-y-2">
-                  {["Exosome Technology", "HA & Fillers", "Peptides", "PDRN / PN", "Regenerative Solutions"].map(
-                    (item) => (
-                      <li key={item} className="flex items-center gap-2 text-[0.85rem] text-white/75">
-                        <span className="h-1 w-1 rounded-full bg-teal flex-shrink-0" />
-                        {item}
-                      </li>
-                    ),
-                  )}
-                </ul>
-              </div>
-
-              {/* × connector */}
-              <div className="flex flex-col items-center justify-center gap-4 bg-white/[0.02] px-8 py-8">
-                <span className="text-[2.5rem] font-bold text-teal/50">×</span>
-                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-white/30 text-center">
-                  Selected Product Platforms
-                </p>
-                <div className="grid grid-cols-2 gap-1.5 w-full">
-                  {["Exosomes", "HA & Fillers", "Peptides", "PDRN / PN", "Regenerative"].map((item) => (
-                    <span
-                      key={item}
-                      className="rounded px-2 py-1 text-center text-[0.65rem] font-medium text-white/60 border border-white/10"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* EverCeutical column */}
-              <div className="bg-white/[0.04] p-8">
-                <p className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-teal">
-                  EverCeutical
-                </p>
-                <p className="mt-2 text-[0.85rem] text-white/55">
-                  Global Marketing · Commercialization
-                </p>
-                <ul className="mt-6 space-y-2">
-                  {[
-                    "Global Distribution Rights",
-                    "Market Expansion",
-                    "Commercial Strategy",
-                    "Brand & Regulatory Support",
-                    "Partner Network",
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-2 text-[0.85rem] text-white/75">
-                      <span className="h-1 w-1 rounded-full bg-teal flex-shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </Reveal>
-
-          <Reveal delay={200}>
-            <div className="mt-10 flex flex-wrap gap-3">
-              <TealButton to="/about/network">Explore the Partnership</TealButton>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      <GlobalPartnershipSection />
 
       {/* ================================================================
           R&D SECTION — existing, preserved
