@@ -48,6 +48,60 @@ export function Header() {
       }[]
     >("products.categories") ?? [];
 
+  // All 10 blog articles grouped by category for the Blog dropdown
+  const BLOG_ARTICLES = [
+    {
+      slug: "what-are-exosomes",
+      label: "What Are Exosomes?",
+      category: "Exosome Science",
+    },
+    {
+      slug: "lyophilized-vs-frozen-exosomes",
+      label: "Lyophilized vs. Frozen Exosomes",
+      category: "Exosome Science",
+    },
+    {
+      slug: "exosome-purification-methods",
+      label: "Exosome Purification Methods: TFF, SEC & Ultrafiltration",
+      category: "Exosome Science",
+    },
+    {
+      slug: "exosome-quality-attributes",
+      label: "What Determines Exosome Quality?",
+      category: "Exosome Science",
+    },
+    {
+      slug: "how-exosomes-are-characterized",
+      label: "How Are Exosomes Characterized?",
+      category: "Exosome Science",
+    },
+    {
+      slug: "huc-msc-exosomes",
+      label: "HUC-MSC-Derived Exosomes: What Makes Them Different?",
+      category: "Exosome Science",
+    },
+    {
+      slug: "exosome-concentration-explained",
+      label: "Exosome Concentration: What Does \"10 Billion\" Mean?",
+      category: "Exosome Science",
+    },
+    {
+      slug: "pdrn-vs-pn",
+      label: "PDRN vs. PN: Differences, Properties & Applications",
+      category: "PDRN / PN",
+    },
+    {
+      slug: "hyaluronic-acid-molecular-weight",
+      label: "How Molecular Weight Influences Hyaluronic Acid",
+      category: "Hyaluronic Acid",
+    },
+    {
+      slug: "cell-culture-to-final-product",
+      label: "From Cell Culture to Final Product",
+      category: "Manufacturing",
+    },
+  ] as const;
+
   const NAV: NavItem[] = [
     {
       to: "/about",

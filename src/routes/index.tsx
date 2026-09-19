@@ -13,7 +13,6 @@ import { GlobalPartnershipSection } from "@/components/site/GlobalPartnership";
 import { ARTICLES } from "@/data/articles";
 import heroLab from "@/assets/hero-lab.jpg";
 import exosomeImg from "@/assets/exosome.jpg";
-import exosome1 from "@/assets/exosome1.png";
 import cleanroom from "@/assets/cleanroom.jpg";
 import qcLab from "@/assets/qc-lab.jpg";
 import molecular from "@/assets/molecular.jpg";
@@ -59,22 +58,22 @@ function Home() {
   return (
     <>
       {/* ================================================================
-          01. HERO — Full-screen with background video support
+          01. HERO — Full-screen
+          Main Heading: Advancing Regenerative Biotechnology
+          Subheading: From scientific discovery to scalable manufacturing.
+          Body: Vesco Science develops advanced biotechnology solutions through
+                integrated R&D, formulation, manufacturing and quality systems.
+          Button: Explore Our Technology
           ================================================================ */}
       <section className="relative isolate flex min-h-screen items-center overflow-hidden bg-navy-deep">
 
         {/* =========================================================
-            HERO VIDEO:
-            Upload your licensed lab background video here.
-            Replace the `src` value below with the path to your video.
-            Suggested filename: hero-background.mp4
-            Place the file in: public/videos/hero-background.mp4
-            Then update src to: /videos/hero-background.mp4
-
-            The video is hidden if it cannot load — the fallback image
-            (hero-lab.jpg) always shows beneath it.
+            HERO VIDEO — upload a licensed lab video to use here.
+            Place the file at: public/videos/hero-background.mp4
+            Then uncomment the <video> block below and remove the
+            fallback <img> (or keep it as poster/fallback).
             ========================================================= */}
-        {/* Fallback background image — always visible as a base layer */}
+        {/* Fallback background image */}
         <img
           src={heroLab}
           alt={t("hero.imageAlt")}
@@ -82,12 +81,11 @@ function Home() {
           style={{ animation: "vs-slow-zoom 26s ease-in-out infinite alternate" }}
         />
         {/*
-            HERO VIDEO — uncomment and set src when you have a licensed video:
-            <video autoPlay muted loop playsInline
-              className="absolute inset-0 h-full w-full object-cover opacity-50"
-              poster={heroLab}>
-              <source src="/videos/hero-background.mp4" type="video/mp4" />
-            </video>
+        <video autoPlay muted loop playsInline
+          className="absolute inset-0 h-full w-full object-cover opacity-50"
+          poster={heroLab}>
+          <source src="/videos/hero-background.mp4" type="video/mp4" />
+        </video>
         */}
 
         {/* Gradient overlay for text readability */}
@@ -99,13 +97,11 @@ function Home() {
             <Eyebrow invert>{t("hero.eyebrow")}</Eyebrow>
           </Reveal>
           <Reveal delay={120}>
-            {/* PDF: "Advancing Regenerative Biotechnology" */}
             <h1 className="mt-7 max-w-4xl text-[clamp(2.4rem,5.6vw,4.4rem)] leading-[1.03] font-semibold text-white">
               {t("hero.title")}
             </h1>
           </Reveal>
           <Reveal delay={220}>
-            {/* PDF: "From scientific discovery to scalable manufacturing." */}
             <p className="mt-6 font-display text-[clamp(1.05rem,1.7vw,1.4rem)] text-teal">
               {t("hero.subtitle")}
             </p>
@@ -117,7 +113,6 @@ function Home() {
           </Reveal>
           <Reveal delay={420}>
             <div className="mt-11 flex flex-wrap gap-3">
-              {/* PDF: "Explore Our Technology" button */}
               <TealButton to="/technology">{t("hero.ctaPrimary")}</TealButton>
               <TealButton to="/oem" variant="ghost">
                 {t("hero.ctaSecondary")}
@@ -329,13 +324,97 @@ function Home() {
         </Reveal>
       </Section>
 
-     <section className="relative overflow-hidden">
-  <img
-    src={exosome1}
-    alt={t("exosome.imageAlt")}
-    className="mx-auto w-full max-w-7xl object-cover"
-  />
-</section>
+      {/* ================================================================
+          05. EXOSOME FEATURE SECTION
+          Google Doc: "From Cellular Source to Characterized Product"
+          Left: EXOSOME TECHNOLOGY heading + description + 3 feature badges
+          Right: 7-step process (Cell Source → Culture → Isolation →
+                 Purification → Characterization → Formulation → Quality Control)
+          ================================================================ */}
+      <section className="relative isolate overflow-hidden bg-navy">
+        <img
+          src={exosomeImg}
+          alt={t("exosome.imageAlt")}
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover opacity-20"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/95 via-navy/85 to-navy-deep/95" />
+        <div className="relative mx-auto w-full max-w-[1240px] px-6 py-20 md:px-10 md:py-28">
+          <div className="grid gap-14 lg:grid-cols-[1fr_1.1fr] lg:items-start">
+
+            {/* Left — description */}
+            <Reveal>
+              <div>
+                <p className="eyebrow !text-teal">Exosome Technology</p>
+                <h2 className="mt-5 text-[clamp(1.75rem,3.4vw,2.85rem)] leading-[1.12] font-semibold text-white">
+                  From Cellular Source to Characterized Product
+                </h2>
+                <p className="mt-6 text-[1rem] leading-relaxed text-white/70">
+                  {t("exosome.body1")}
+                </p>
+                <p className="mt-4 text-[1rem] leading-relaxed text-white/70">
+                  {t("exosome.body2")}
+                </p>
+                {/* 3 feature badges */}
+                <div className="mt-10 grid gap-px bg-white/10 sm:grid-cols-3">
+                  {[
+                    { label: "High Purity", desc: "Advanced isolation & purification technology" },
+                    { label: "Consistent Quality", desc: "Rigorous testing and quality control" },
+                    { label: "Proven Technology", desc: "Science-driven process and characterization" },
+                  ].map((feat) => (
+                    <div key={feat.label} className="bg-white/[0.04] px-5 py-5 text-center">
+                      <p className="text-[0.8rem] font-semibold text-white">{feat.label}</p>
+                      <p className="mt-1.5 text-[0.72rem] leading-relaxed text-white/55">{feat.desc}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-10">
+                  <TealButton to="/technology/$slug" params={{ slug: "exosome" }}>
+                    {t("exosome.cta")}
+                  </TealButton>
+                </div>
+              </div>
+            </Reveal>
+
+            {/* Right — 7-step process (exact Google Doc order) */}
+            <Reveal delay={140}>
+              <div>
+                <p className="eyebrow !text-teal">Production Process</p>
+                <ol className="mt-6 space-y-px">
+                  {[
+                    { step: "Cell Source",       desc: "Carefully selected and screened cell sources" },
+                    { step: "Culture",           desc: "Optimized cell culture conditions for exosome production" },
+                    { step: "Isolation",         desc: "Initial separation of exosomes from cell culture" },
+                    { step: "Purification",      desc: "Advanced purification to achieve high purity exosomes" },
+                    { step: "Characterization",  desc: "Comprehensive analysis of size, concentration and markers" },
+                    { step: "Formulation",       desc: "Stabilized formulation for optimal performance" },
+                    { step: "Quality Control",   desc: "Rigorous quality control at every batch" },
+                  ].map((item, i) => (
+                    <li
+                      key={item.step}
+                      className="flex items-start gap-4 bg-white/[0.04] px-5 py-4 outline outline-white/10"
+                    >
+                      <div className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-teal text-[0.62rem] font-bold text-[#05231f]">
+                        {String(i + 1).padStart(2, "0")}
+                      </div>
+                      <div>
+                        <p className="text-[0.88rem] font-semibold text-white">{item.step}</p>
+                        <p className="mt-0.5 text-[0.78rem] leading-relaxed text-white/55">{item.desc}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+                <div className="mt-6 border border-teal/30 bg-teal/10 px-5 py-3 text-center">
+                  <p className="text-[0.75rem] font-semibold tracking-[0.1em] text-teal">
+                    Science · Technology · Quality · Every Step · Every Batch
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+
+          </div>
+        </div>
+      </section>
 
 
       {/* ================================================================

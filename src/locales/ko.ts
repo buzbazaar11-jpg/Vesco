@@ -13,6 +13,7 @@ export const ko = {
     quality: "품질경영",
     facility: "생산시설",
     research: "연구·인사이트",
+    blog: "블로그",
     resources: "자료실",
     contact: "문의",
     faq: "자주 묻는 질문",
